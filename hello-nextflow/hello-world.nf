@@ -19,4 +19,14 @@ workflow {
     main:
     // emit a greeting
     sayHello()
+
+    publish:
+    first_output = sayHello.out
+}
+
+output {
+    first_output {
+        path "hello_world"
+        mode 'copy'
+    }
 }
